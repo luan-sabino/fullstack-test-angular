@@ -6,6 +6,26 @@
   // TODO: criar um método POST no api.service que envie o texto do input e exiba a resposta na página
 -->
 
-<h1>Título da página</h1>
+<div class="pagina-body">
+  <header>
+    <h1>Novakio</h1>
+  </header>
+  <main>
+    <aside>
+      <a href="/start">Start</a>
+    </aside>
+    <section>
+      <div class="loading-spinner rotating" *ngIf="isLoading"><div></div></div>
+      <h3 *ngIf="!isLoading">{{ apiGreeting }}</h3>
+      <span *ngIf="!isLoading">{{ timeNow }}</span>
+      <form [formGroup]="loremForm" (ngSubmit)="onSubmit()">
+        <input type="text" name="inputContent" formControlName="inputContent">
+        <input type="submit" value="Enviar">
+      </form>
+      <span>{{ responsePost }}</span>
+    </section>
+  </main>
+</div>
 
-{{ apiGreeting }}
+
+

@@ -1,0 +1,148 @@
+$font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+$color-dark-sea-green: #81c784;
+$color-middle-green: #519657;
+$color-menthol: #b2fab4;
+$color-steel-teal: #607d8b;
+$color-steel-teal-hover: #495f6a;
+
+
+.pagina-body{
+    display: flex;
+    flex-direction: column;
+    font-family: $font-family;
+    width: 100%;
+    height: 100%;
+
+    header{
+        letter-spacing: 12px;
+        line-height: 16px;
+        text-transform: uppercase;
+        text-align: center;
+        background-color: $color-middle-green;
+
+        h1{
+            padding: 32px;
+            color:#FFFFFF;
+        }
+    }
+
+    main{
+        display: flex;
+        width: 100%;
+        height: 100%;
+
+        aside{
+            display: flex;
+            background-color: $color-dark-sea-green;
+            flex-direction: column;
+            width: 20%;
+            height: 100%;
+
+            a{
+                background-color: $color-steel-teal;
+                padding: 8px 16px;
+                border-radius: 8px;
+                text-align: center;
+                text-decoration: none;
+                color:#FFFFFF;
+                font-size: 20px;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                width: auto;
+                margin: 16px 12px;
+
+            }
+
+            a:hover{
+                background-color: $color-steel-teal-hover;
+            }
+        }
+
+        section{
+            background-color: $color-menthol;
+            width: 80%;
+            height: auto;
+            margin-bottom: 0px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            .loading-spinner{
+                margin: 8px;
+                margin-top: 30px;
+                width: 40px;
+                height: 40px;
+                border: transparent 0px solid;
+                border-radius: 100%;
+                background-image: linear-gradient(to bottom, $color-steel-teal 30%, $color-menthol 70%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                div{
+                    width: 20px;
+                    height: 20px;
+                    border: transparent 0px solid;
+                    border-radius: 100%;
+                    background-color: $color-menthol;
+                }
+            }
+
+            span{
+                margin: 8px;
+            }
+
+            form{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                
+                input{
+                    margin:8px;
+                    border: transparent 1px solid;
+                    border-radius: 8px;
+                    text-align: center;
+                }
+                
+                input[type="text"]{
+                    padding:8px;
+                }:focus{
+                    outline: none;
+                }
+
+                input[type="submit"]{
+                    width: 50%;
+                    padding:8px 12px;
+                    background-color: $color-steel-teal;
+                    color:#FFFFFF;
+                    font-size: 16px;
+                    letter-spacing: 1px;
+                    cursor: pointer;
+                }
+
+                input[type="submit"]:hover{
+                    background-color: $color-steel-teal-hover;
+                }
+
+
+            }
+
+        }
+    }
+
+}
+
+@keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    animation: rotating 800ms linear infinite;
+}
